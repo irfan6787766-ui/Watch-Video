@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Video Eksklusif</title>
+
+<!-- OG PREVIEW FACEBOOK -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Video Eksklusif 🔥">
+<meta property="og:description" content="Klik untuk menonton videonya sampai selesai">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifKNtJ9Mh_bA_P-ukls_e31N3BOCo-vNWTlhdnn6Xvy9N13jlKUAkZtmskELoeqeZSNhDt2pJk8-4ADx5OVFLDkVmyiso5f7jltA0MlwZ1HGTqaol5CYmU41GZriA3cBUgVWCjl-gONTqkqL89s0ibvlOOIIUB-9OxCiSwapSNxZTZoBQ4NYfE3HD64RPo/s1200/IMG_20251224_024818.jpg">
+
+<style>
+body{margin:0;background:#000;font-family:Arial}
+.container{max-width:720px;margin:auto}
+video{width:100%;background:#000}
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.play-btn{
+  background:#ff6a00;
+  color:#fff;
+  padding:18px 34px;
+  font-size:18px;
+  font-weight:bold;
+  border-radius:14px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <video id="video" controls playsinline muted
+    poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifKNtJ9Mh_bA_P-ukls_e31N3BOCo-vNWTlhdnn6Xvy9N13jlKUAkZtmskELoeqeZSNhDt2pJk8-4ADx5OVFLDkVmyiso5f7jltA0MlwZ1HGTqaol5CYmU41GZriA3cBUgVWCjl-gONTqkqL89s0ibvlOOIIUB-9OxCiSwapSNxZTZoBQ4NYfE3HD64RPo/s1200/IMG_20251224_024818.jpg">
+    <source src="https://res.cloudinary.com/dtvtvfnq9/video/upload/MOV_17665173842637445_s6aisc.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="overlay" id="overlay">
+  <a href="https://clanksubjectprecede.com/b3sj7emi?key=77813952a8fcdf2b2efdfe782a2576d8"
+     target="_blank"
+     class="play-btn"
+     id="playBtn">
+     ▶ Tonton Video
+  </a>
+</div>
+
+<script>
+const video = document.getElementById("video");
+const overlay = document.getElementById("overlay");
+const btn = document.getElementById("playBtn");
+
+let unlocked = false;
+let midAdsShown = false;
+
+// IKLAN 1: sebelum play
+btn.onclick = () => {
+  unlocked = true;
+  setTimeout(() => {
+    overlay.style.display = "none";
+    video.muted = false;
+    video.play();
+  }, 1200);
+};
+
+// cegah play tanpa klik
+video.onplay = () => {
+  if (!unlocked) {
+    video.pause();
+    overlay.style.display = "flex";
+  }
+};
+
+// IKLAN 2: setelah 1 menit (60 detik)
+video.ontimeupdate = () => {
+  if (video.currentTime >= 60 && !midAdsShown) {
+    midAdsShown = true;
+    window.open(
+      "https://clanksubjectprecede.com/b3sj7emi?key=77813952a8fcdf2b2efdfe782a2576d8",
+      "_blank"
+    );
+  }
+};
+</script>
+
+</body>
+</html>
