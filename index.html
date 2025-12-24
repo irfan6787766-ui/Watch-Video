@@ -4,22 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Eksklusif</title>
+<title>Exclusive Video 🔥</title>
 
-<!-- OG PREVIEW FACEBOOK -->
+<!-- OPEN GRAPH (FB / WA PREVIEW) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Video Eksklusif 🔥">
-<meta property="og:description" content="Klik untuk menonton videonya sampai selesai">
-<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifKNtJ9Mh_bA_P-ukls_e31N3BOCo-vNWTlhdnn6Xvy9N13jlKUAkZtmskELoeqeZSNhDt2pJk8-4ADx5OVFLDkVmyiso5f7jltA0MlwZ1HGTqaol5CYmU41GZriA3cBUgVWCjl-gONTqkqL89s0ibvlOOIIUB-9OxCiSwapSNxZTZoBQ4NYfE3HD64RPo/s1200/IMG_20251224_024818.jpg">
+<meta property="og:title" content="Exclusive Video 🔥">
+<meta property="og:description" content="Click to watch the full video">
+<meta property="og:url" content="https://irfan6787766-ui.github.io/Watch-Video/">
+<meta property="og:image" content="https://irfan6787766-ui.github.io/Watch-Video/preview.jpg">
+
+<!-- OPTIONAL -->
+<meta name="twitter:card" content="summary_large_image">
 
 <style>
-body{margin:0;background:#000;font-family:Arial}
-.container{max-width:720px;margin:auto}
-video{width:100%;background:#000}
+body{
+  margin:0;
+  background:#000;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.container{
+  max-width:720px;
+  margin:auto;
+}
+video{
+  width:100%;
+  background:#000;
+}
 .overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.94);
+  background:rgba(0,0,0,.95);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -28,11 +42,12 @@ video{width:100%;background:#000}
 .play-btn{
   background:#ff6a00;
   color:#fff;
-  padding:18px 34px;
+  padding:18px 36px;
   font-size:18px;
   font-weight:bold;
   border-radius:14px;
   text-decoration:none;
+  box-shadow:0 0 30px rgba(255,106,0,.7);
 }
 </style>
 </head>
@@ -41,17 +56,19 @@ video{width:100%;background:#000}
 
 <div class="container">
   <video id="video" controls playsinline muted
-    poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifKNtJ9Mh_bA_P-ukls_e31N3BOCo-vNWTlhdnn6Xvy9N13jlKUAkZtmskELoeqeZSNhDt2pJk8-4ADx5OVFLDkVmyiso5f7jltA0MlwZ1HGTqaol5CYmU41GZriA3cBUgVWCjl-gONTqkqL89s0ibvlOOIIUB-9OxCiSwapSNxZTZoBQ4NYfE3HD64RPo/s1200/IMG_20251224_024818.jpg">
+    poster="preview.jpg">
     <source src="https://res.cloudinary.com/dtvtvfnq9/video/upload/MOV_17665173842637445_s6aisc.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
   </video>
 </div>
 
+<!-- OVERLAY / SMARTLINK -->
 <div class="overlay" id="overlay">
-  <a href="https://clanksubjectprecede.com/b3sj7emi?key=77813952a8fcdf2b2efdfe782a2576d8"
+  <a href="https://departharpglove.com/b7tuc3gc?key=5a5f875b9cf2f34a524f304cf3969115"
      target="_blank"
      class="play-btn"
      id="playBtn">
-     ▶ Tonton Video
+     ▶ Watch Video
   </a>
 </div>
 
@@ -61,9 +78,8 @@ const overlay = document.getElementById("overlay");
 const btn = document.getElementById("playBtn");
 
 let unlocked = false;
-let midAdsShown = false;
+let popunderLoaded = false;
 
-// IKLAN 1: sebelum play
 btn.onclick = () => {
   unlocked = true;
   setTimeout(() => {
@@ -73,7 +89,6 @@ btn.onclick = () => {
   }, 1200);
 };
 
-// cegah play tanpa klik
 video.onplay = () => {
   if (!unlocked) {
     video.pause();
@@ -81,14 +96,13 @@ video.onplay = () => {
   }
 };
 
-// IKLAN 2: setelah 1 menit (60 detik)
 video.ontimeupdate = () => {
-  if (video.currentTime >= 60 && !midAdsShown) {
-    midAdsShown = true;
-    window.open(
-      "https://clanksubjectprecede.com/b3sj7emi?key=77813952a8fcdf2b2efdfe782a2576d8",
-      "_blank"
-    );
+  if (video.currentTime >= 60 && !popunderLoaded) {
+    popunderLoaded = true;
+    const s = document.createElement("script");
+    s.src = "https://departharpglove.com/a0/7b/c7/a07bc7add132c48b7af497125bc45990.js";
+    s.async = true;
+    document.body.appendChild(s);
   }
 };
 </script>
